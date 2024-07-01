@@ -23,6 +23,12 @@ public interface ${classInfo.className}Service {
     **/
     public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
+    /**
+    * 查询详情
+    * @author ${authorName}
+    * @date ${.now?string('yyyy/MM/dd')}
+    **/
+    public Result<${classInfo.className}ResDTO> selectOne(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
 
     /**

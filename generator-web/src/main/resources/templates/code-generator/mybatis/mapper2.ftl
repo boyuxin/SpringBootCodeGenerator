@@ -40,12 +40,32 @@ public class ${classInfo.className}ManagerImpl implements ${classInfo.className}
     }
 
     /**
-    * 新增
+    * 分页查询
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
     @Override
     public void pageList( PageBO<${classInfo.className}BO> pageBO) {
-        return true;
+    Page<${classInfo.className}DO> page = new Page<>(pageBO.getCurrentPage(), pageBO.getPageSize());
+        QueryWrapper<${classInfo.className}DO> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("", "");
+            ${classInfo.className?uncap_first}Mapper.selectPage(page, queryWrapper);
+            pageBO.setTotalSize((int) page.getTotal());
+            pageBO.setTotalPage((int) page.getPages());
+            pageBO.setResults(${classInfo.className}Convert.INSTANCE.convertDOsToBOs(page.getRecords()));
+    }
+
+    /**
+    * 查询详情
+    * @author boyuxin
+    * @date 2024/06/29
+    **/
+    @Override
+    public ${classInfo.className}BO selectOne(${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
+        QueryWrapper<${classInfo.className}DO> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("", "");
+        ${classInfo.className}DO ${classInfo.className?uncap_first}DO = labRecordMapper.selectOne(queryWrapper);
+        ${classInfo.className}BO ${classInfo.className?uncap_first}BO = LabRecordServiceConvert.INSTANCE.convertDOToBo(${classInfo.className?uncap_first}DO);
+        return ${classInfo.className?uncap_first}BO;
     }
 }

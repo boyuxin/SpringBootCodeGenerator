@@ -10,18 +10,22 @@ import java.util.Map;
  * @date ${.now?string('yyyy-MM-dd')}
  */
 @Mapper
-public interface ${classInfo.className}ServiceConvert {
+public interface ${classInfo.className}Convert {
 
-    ${classInfo.className}ServiceConvert INSTANCE = Mappers.getMapper(${classInfo.className}ServiceConvert.class);
+    ${classInfo.className}Convert INSTANCE = Mappers.getMapper(${classInfo.className}Convert.class);
 
     ${classInfo.className}BO  convertReqToBO(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
-    ${classInfo.className}BO  convertBOToDO(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
+    ${classInfo.className}DO  convertBOToDO(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
-    ${classInfo.className}BO  convertDOToBO(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
+    ${classInfo.className}BO  convertDOToBO(${classInfo.className}DO ${classInfo.className?uncap_first}DO);
 
-    ${classInfo.className}BO  convertBOToRes(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
+    ${classInfo.className}ResDTO  convertBOToResDTO(${classInfo.className}BO ${classInfo.className?uncap_first}BO);
 
-    ${classInfo.className}ResDTO  convertToResDTO(${classInfo.className}BO ${classInfo.className?uncap_first}BO);
+    List<${classInfo.className}BO> convertDOsToBOs(List<${classInfo.className}DO> ${classInfo.className?uncap_first}DOList);
+
+    PageBO<${classInfo.className}BO> convertPageDTOToPageBO(PageDTO<${classInfo.className}DTO> pageDTO);
+
+    PageDTO<${classInfo.className}DTO> convertPageBOToPageDTO(PageBO<${classInfo.className}BO> pageBO);
 
 }

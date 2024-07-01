@@ -44,6 +44,16 @@ public class ${classInfo.className}Controller {
     }
 
     /**
+    * 查询详情
+    * @author ${authorName}
+    * @date ${.now?string('yyyy/MM/dd')}
+    **/
+    @RequestMapping("/selectOne")
+    public Result<${classInfo.className}ResDTO> selectOne(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
+        return ${classInfo.className?uncap_first}Service.selectOne(${classInfo.className?uncap_first}ReqDTO);
+    }
+
+    /**
     * 查询 分页查询
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}

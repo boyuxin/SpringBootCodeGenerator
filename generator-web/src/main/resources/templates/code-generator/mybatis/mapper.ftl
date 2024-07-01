@@ -36,4 +36,12 @@ public interface ${classInfo.className}Manager {
     void pageList(PageBO<${classInfo.className}BO> pageBO);
 
 
+    /**
+    * 查询详情
+    * @author ${authorName}
+    * @date ${.now?string('yyyy/MM/dd')}
+    **/
+    ${classInfo.className}BO selectOne(${classInfo.className}BO ${classInfo.className?uncap_first}BO);
+
+
 }

@@ -45,18 +45,27 @@ public class ${classInfo.className}ServiceImpl implements ${classInfo.className}
 
 
 	/**
+	* 更新
+	* @author ${authorName}
+	* @date ${.now?string('yyyy/MM/dd')}
+	**/
+	@Override
+	public Result<${classInfo.className}ResDTO> selectOne(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO) {
+		${classInfo.className}BO ${classInfo.className?uncap_first}BO = ${classInfo.className}Convert.INSTANCE.convertReqToBO(${classInfo.className?uncap_first}DTO);
+		return new Result<>(${classInfo.className}Convert.INSTANCE.convertBOToResDTO(${classInfo.className?uncap_first}Biz.selectOne(${classInfo.className?uncap_first}BO)));
+	}
+
+
+	/**
 	* 查询 分页查询
 	* @author ${authorName}
 	* @date ${.now?string('yyyy/MM/dd')}
 	**/
 	@Override
 	public  Result<PageDTO<${classInfo.className}ResDTO>>  pageList(PageDTO<${classInfo.className}ReqDTO> pageDTO) {
-
-
-	    PageBO<${classInfo.className}BO> pageBO = ${classInfo.className}Convert.INSTANCE.convertToPageBo(${classInfo.className?uncap_first}DTO);
+	    PageBO<${classInfo.className}BO> pageBO = ${classInfo.className}Convert.INSTANCE.convertPageDTOToPageBO(${classInfo.className?uncap_first}DTO);
 		${classInfo.className?uncap_first}Biz.pageList(pageBO);
-
-		return Result.of();
+		return Result.of(${classInfo.className}Convert.INSTANCE.convertPageBOToPageDTO(pageBO));
 	}
 
 }

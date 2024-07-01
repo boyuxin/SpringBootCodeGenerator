@@ -23,9 +23,9 @@ public class ${classInfo.className}Biz {
 	* @author ${authorName}
 	* @date ${.now?string('yyyy/MM/dd')}
 	**/
-	public Result<Boolean>  insert(${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
-	    ${classInfo.className?uncap_first}Manager.insert(${classInfo.className?uncap_first}BO);
-	    return new Result<>(Boolean.TRUE);
+	public Boolean  insert(${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
+
+	    return ${classInfo.className?uncap_first}Manager.insert(${classInfo.className?uncap_first}BO);
 	}
 
 	/**
@@ -33,10 +33,8 @@ public class ${classInfo.className}Biz {
 	* @author ${authorName}
 	* @date ${.now?string('yyyy/MM/dd')}
 	**/
-	@Override
-	public Result<Boolean> update(${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
-		int ret = ${classInfo.className?uncap_first}Manager..update(${classInfo.className?uncap_first}BO);
-		return new Result<>(Boolean.TRUE);
+	public Boolean update(${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
+		return ${classInfo.className?uncap_first}Manager.update(${classInfo.className?uncap_first}BO);
 	}
 
 
@@ -45,12 +43,11 @@ public class ${classInfo.className}Biz {
 	* @author ${authorName}
 	* @date ${.now?string('yyyy/MM/dd')}
 	**/
-	@Override
 	public  void pageList(PageBO<${classInfo.className}ReqDTO> pageBO) {
-
-		${classInfo.className?uncap_first}Biz.pageList(pageBO);
-
-		return Result.of();
+	    ${classInfo.className?uncap_first}Manager.pageList(pageBO);
 	}
 
+	public ${classInfo.className}BO selectOne(${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
+		return ${classInfo.className?uncap_first}Manager.selectOne(${classInfo.className?uncap_first}BO);
+	}
 }

@@ -22,6 +22,8 @@ public class ${classInfo.className}ManagerImpl implements ${classInfo.className}
     **/
     @Override
     public Boolean insert( ${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
+        ${classInfo.className}DO ${classInfo.className?uncap_first}DO = ${classInfo.className}Convert.INSTANCE.convertBOToDO(${classInfo.className?uncap_first}BO);
+
         return ${classInfo.className?uncap_first}Mapper.insert() > 0;
     }
 
@@ -32,6 +34,8 @@ public class ${classInfo.className}ManagerImpl implements ${classInfo.className}
     **/
     @Override
     public Boolean update( ${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
+        ${classInfo.className}DO ${classInfo.className?uncap_first}DO = ${classInfo.className}Convert.INSTANCE.convertBOToDO(${classInfo.className?uncap_first}BO);
+
         return true;
     }
 

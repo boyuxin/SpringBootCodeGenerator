@@ -4,6 +4,8 @@ import org.mapstruct.factory.Mappers;
 <#if isAutoImport?exists && isAutoImport==true>
 import java.util.Map;
 </#if>
+import java.util.List;
+
 /**
  * @description ${classInfo.classComment}
  * @author ${authorName}

@@ -4,6 +4,8 @@ import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 </#if>
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 /**
  * @description ${classInfo.classComment}Mapper
  * @author ${authorName}

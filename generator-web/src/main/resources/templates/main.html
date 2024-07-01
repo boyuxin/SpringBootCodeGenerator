@@ -113,7 +113,7 @@
                     <el-button-group >
                         <el-button type="primary" plain disabled>{{item.group}}</el-button>
                         <span v-for="(childItem, index) in item.templates" :key="index">
-                            <el-button @click="setOutputModel">{{childItem.name}}</el-button>
+                            <el-button @click="setOutputModel">{{childItem.description}}</el-button>
                         </span>
                     </el-button-group>
                 </div>

@@ -24,8 +24,8 @@ public class ${classInfo.className}ServiceImpl implements ${classInfo.className}
 	* @date ${.now?string('yyyy/MM/dd')}
 	**/
 	@Override
-	public Result<Boolean>  insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}DTO) {
-	${classInfo.className}BO ${classInfo.className?uncap_first}BO = LabRecordServiceConvert.INSTANCE.convertToBo(${classInfo.className?uncap_first}DTO);
+	public Result<Boolean>  insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO) {
+	${classInfo.className}BO ${classInfo.className?uncap_first}BO = ${classInfo.className}Convert.INSTANCE.convertToBo(${classInfo.className?uncap_first}DTO);
 
 	${classInfo.className?uncap_first}Biz.insert(${classInfo.className?uncap_first}BO);
         return new Result<>(Boolean.TRUE);
@@ -37,8 +37,8 @@ public class ${classInfo.className}ServiceImpl implements ${classInfo.className}
 	* @date ${.now?string('yyyy/MM/dd')}
 	**/
 	@Override
-	public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}DTO) {
-		${classInfo.className}BO ${classInfo.className?uncap_first}BO = LabRecordServiceConvert.INSTANCE.convertToBo(${classInfo.className?uncap_first}DTO);
+	public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO) {
+		${classInfo.className}BO ${classInfo.className?uncap_first}BO = ${classInfo.className}Convert.INSTANCE.convertToBo(${classInfo.className?uncap_first}DTO);
 		int ret = ${classInfo.className?uncap_first}Biz.update(${classInfo.className?uncap_first});
 		return new Result<>(Boolean.TRUE);
 	}

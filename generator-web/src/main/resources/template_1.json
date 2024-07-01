@@ -1,5 +1,33 @@
 [
-
+  {
+  "group": "ui",
+  "templates": [{
+    "id": "10",
+    "name": "swagger-ui",
+    "description": "swagger-ui"
+  },
+    {
+      "id": "11",
+      "name": "element-ui",
+      "description": "element-ui"
+    },
+    {
+      "id": "12",
+      "name": "bootstrap-ui",
+      "description": "bootstrap-ui"
+    },
+    {
+      "id": "13",
+      "name": "layui-edit",
+      "description": "layui-edit"
+    },
+    {
+      "id": "14",
+      "name": "layui-list",
+      "description": "layui-list"
+    }
+  ]
+},
   {
     "group": "mybatis",
     "templates": [{
@@ -20,7 +48,7 @@
       {
         "id": "23",
         "name": "mapper",
-        "description": "manager"
+        "description": "mapper"
       },
       {
         "id": "24",
@@ -29,33 +57,13 @@
       },
       {
         "id": "25",
-        "name": "BO",
-        "description": "BO"
+        "name": "model",
+        "description": "model"
       },
       {
         "id": "26",
-        "name": "DO",
-        "description": "DO"
-      },
-      {
-        "id": "27",
-        "name": "ResDTO",
-        "description": "ResDTO"
-      },
-      {
-        "id": "27",
-        "name": "ReqDTO",
-        "description": "ReqDTO"
-      },
-      {
-        "id": "28",
         "name": "mapper2",
-        "description": "ManagerImpl"
-      },
-      {
-        "id": "29",
-        "name": "convert",
-        "description": "convert"
+        "description": "mapper annotation"
       }
     ]
   },

@@ -28,8 +28,8 @@ public class ${classInfo.className}Controller {
     * @date ${.now?string('yyyy/MM/dd')}
     **/
     @RequestMapping("/insert")
-    public Result<Boolean> insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}){
-        return ${classInfo.className?uncap_first}Service.insert(${classInfo.className?uncap_first});
+    public Result<Boolean> insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
+        return ${classInfo.className?uncap_first}Service.insert(${classInfo.className?uncap_first}ReqDTO);
     }
 
 
@@ -39,8 +39,8 @@ public class ${classInfo.className}Controller {
     * @date ${.now?string('yyyy/MM/dd')}
     **/
     @RequestMapping("/update")
-    public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}){
-        return ${classInfo.className?uncap_first}Service.update(${classInfo.className?uncap_first});
+    public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
+        return ${classInfo.className?uncap_first}Service.update(${classInfo.className?uncap_first}ReqDTO);
     }
 
     /**

@@ -13,7 +13,7 @@ public interface ${classInfo.className}Service {
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    public Result<Boolean> insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first});
+    public Result<Boolean> insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
 
     /**
@@ -21,7 +21,7 @@ public interface ${classInfo.className}Service {
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first});
+    public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
 
 

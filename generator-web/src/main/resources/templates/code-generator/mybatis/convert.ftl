@@ -16,7 +16,7 @@ public interface ${classInfo.className}Convert {
 
     ${classInfo.className}BO  convertReqToBO(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
-    ${classInfo.className}DO  convertBOToDO(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
+    ${classInfo.className}DO  convertBOToDO(${classInfo.className}BO ${classInfo.className?uncap_first}BO);
 
     ${classInfo.className}BO  convertDOToBO(${classInfo.className}DO ${classInfo.className?uncap_first}DO);
 
@@ -24,8 +24,8 @@ public interface ${classInfo.className}Convert {
 
     List<${classInfo.className}BO> convertDOsToBOs(List<${classInfo.className}DO> ${classInfo.className?uncap_first}DOList);
 
-    PageBO<${classInfo.className}BO> convertPageDTOToPageBO(PageDTO<${classInfo.className}DTO> pageDTO);
+    PageBO<${classInfo.className}BO> convertPageDTOToPageBO(PageDTO<${classInfo.className}ReqDTO> pageDTO);
 
-    PageDTO<${classInfo.className}DTO> convertPageBOToPageDTO(PageBO<${classInfo.className}BO> pageBO);
+    PageDTO<${classInfo.className}ResDTO> convertPageBOToPageDTO(PageBO<${classInfo.className}BO> pageBO);
 
 }

@@ -43,7 +43,7 @@ public class ${classInfo.className}Biz {
 	* @author ${authorName}
 	* @date ${.now?string('yyyy/MM/dd')}
 	**/
-	public  void pageList(PageBO<${classInfo.className}ReqDTO> pageBO) {
+	public  void pageList(PageBO<${classInfo.className}BO> pageBO) {
 	    ${classInfo.className?uncap_first}Manager.pageList(pageBO);
 	}
 

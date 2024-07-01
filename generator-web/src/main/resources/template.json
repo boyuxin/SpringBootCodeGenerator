@@ -19,7 +19,7 @@
       },
       {
         "id": "23",
-        "name": "mapper",
+        "name": "manager",
         "description": "manager"
       },
       {
@@ -49,7 +49,7 @@
       },
       {
         "id": "28",
-        "name": "mapper2",
+        "name": "ManagerImpl",
         "description": "ManagerImpl"
       },
       {

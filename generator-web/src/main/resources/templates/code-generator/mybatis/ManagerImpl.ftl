@@ -24,7 +24,7 @@ public class ${classInfo.className}ManagerImpl implements ${classInfo.className}
     public Boolean insert( ${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
         ${classInfo.className}DO ${classInfo.className?uncap_first}DO = ${classInfo.className}Convert.INSTANCE.convertBOToDO(${classInfo.className?uncap_first}BO);
 
-        return ${classInfo.className?uncap_first}Mapper.insert() > 0;
+        return ${classInfo.className?uncap_first}Mapper.insert(${classInfo.className?uncap_first}DO) > 0;
     }
 
     /**
@@ -64,8 +64,7 @@ public class ${classInfo.className}ManagerImpl implements ${classInfo.className}
     public ${classInfo.className}BO selectOne(${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
         QueryWrapper<${classInfo.className}DO> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("", "");
-        ${classInfo.className}DO ${classInfo.className?uncap_first}DO = labRecordMapper.selectOne(queryWrapper);
-        ${classInfo.className}BO ${classInfo.className?uncap_first}BO = LabRecordServiceConvert.INSTANCE.convertDOToBo(${classInfo.className?uncap_first}DO);
-        return ${classInfo.className?uncap_first}BO;
+        ${classInfo.className}DO ${classInfo.className?uncap_first}DO = ${classInfo.className?uncap_first}Mapper.selectOne(queryWrapper);
+        return  ${classInfo.className}Convert.INSTANCE.convertDOToBO(${classInfo.className?uncap_first}DO);
     }
 }

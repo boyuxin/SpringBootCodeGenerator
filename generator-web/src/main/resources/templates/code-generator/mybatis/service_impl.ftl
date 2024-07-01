@@ -25,7 +25,7 @@ public class ${classInfo.className}ServiceImpl implements ${classInfo.className}
 	**/
 	@Override
 	public Result<Boolean>  insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO) {
-	${classInfo.className}BO ${classInfo.className?uncap_first}BO = ${classInfo.className}Convert.INSTANCE.convertReqToBO(${classInfo.className?uncap_first}DTO);
+	${classInfo.className}BO ${classInfo.className?uncap_first}BO = ${classInfo.className}Convert.INSTANCE.convertReqToBO(${classInfo.className?uncap_first}ReqDTO);
 
 	${classInfo.className?uncap_first}Biz.insert(${classInfo.className?uncap_first}BO);
         return new Result<>(Boolean.TRUE);
@@ -38,9 +38,8 @@ public class ${classInfo.className}ServiceImpl implements ${classInfo.className}
 	**/
 	@Override
 	public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO) {
-		${classInfo.className}BO ${classInfo.className?uncap_first}BO = ${classInfo.className}Convert.INSTANCE.convertReqToBO(${classInfo.className?uncap_first}DTO);
-		int ret = ${classInfo.className?uncap_first}Biz.update(${classInfo.className?uncap_first});
-		return new Result<>(Boolean.TRUE);
+		${classInfo.className}BO ${classInfo.className?uncap_first}BO = ${classInfo.className}Convert.INSTANCE.convertReqToBO(${classInfo.className?uncap_first}ReqDTO);
+		return Result.of(${classInfo.className?uncap_first}Biz.update(${classInfo.className?uncap_first}BO));
 	}
 
 
@@ -51,7 +50,7 @@ public class ${classInfo.className}ServiceImpl implements ${classInfo.className}
 	**/
 	@Override
 	public Result<${classInfo.className}ResDTO> selectOne(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO) {
-		${classInfo.className}BO ${classInfo.className?uncap_first}BO = ${classInfo.className}Convert.INSTANCE.convertReqToBO(${classInfo.className?uncap_first}DTO);
+		${classInfo.className}BO ${classInfo.className?uncap_first}BO = ${classInfo.className}Convert.INSTANCE.convertReqToBO(${classInfo.className?uncap_first}ReqDTO);
 		return new Result<>(${classInfo.className}Convert.INSTANCE.convertBOToResDTO(${classInfo.className?uncap_first}Biz.selectOne(${classInfo.className?uncap_first}BO)));
 	}
 
@@ -63,7 +62,7 @@ public class ${classInfo.className}ServiceImpl implements ${classInfo.className}
 	**/
 	@Override
 	public  Result<PageDTO<${classInfo.className}ResDTO>>  pageList(PageDTO<${classInfo.className}ReqDTO> pageDTO) {
-	    PageBO<${classInfo.className}BO> pageBO = ${classInfo.className}Convert.INSTANCE.convertPageDTOToPageBO(${classInfo.className?uncap_first}DTO);
+	    PageBO<${classInfo.className}BO> pageBO = ${classInfo.className}Convert.INSTANCE.convertPageDTOToPageBO(pageDTO);
 		${classInfo.className?uncap_first}Biz.pageList(pageBO);
 		return Result.of(${classInfo.className}Convert.INSTANCE.convertPageBOToPageDTO(pageBO));
 	}

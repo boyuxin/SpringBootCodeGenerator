@@ -11,7 +11,6 @@ import java.io.Serializable;
 @Data
 public class ${classInfo.className}BO extends BaseBO {
 
-    private static final long serialVersionUID = 1L;
 
 <#if classInfo.fieldList?exists && classInfo.fieldList?size gt 0>
 <#list classInfo.fieldList as fieldItem >

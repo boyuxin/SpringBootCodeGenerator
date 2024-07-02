@@ -1,6 +1,7 @@
 package com.softdev.system.generator.controller;
 
 import com.softdev.system.generator.entity.ClassInfo;
+import com.softdev.system.generator.entity.FieldInfo;
 import com.softdev.system.generator.entity.ParamInfo;
 import com.softdev.system.generator.entity.ReturnT;
 import com.softdev.system.generator.service.GeneratorService;
@@ -14,8 +15,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * 代码生成控制器
@@ -74,8 +78,16 @@ public class GeneratorController {
             //默认模式：default parse sql by java
         }
 
-        //2.Set the params 设置表格参数
+        // 要排除的字段名列表
+        List<String> excludeFieldNames = Arrays.asList("id", "createdAt", "createdBy", "updatedAt", "updatedBy", "usableFlag");
 
+        // 使用流操作过滤 fieldList
+        List<FieldInfo> collect = classInfo.getFieldList().stream()
+                .filter(fieldInfo -> !excludeFieldNames.contains(fieldInfo.getFieldName()))
+                .collect(Collectors.toList());
+
+        //2.Set the params 设置表格参数
+        classInfo.setFieldList(collect);
         paramInfo.getOptions().put("classInfo", classInfo);
         paramInfo.getOptions().put("tableName", classInfo == null ? System.currentTimeMillis() : classInfo.getTableName());
 

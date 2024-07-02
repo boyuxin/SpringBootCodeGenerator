@@ -11,10 +11,11 @@ import java.util.Map;
 </#if>
 
 /**
- * @description ${classInfo.classComment}
- * @author ${authorName}
- * @date ${.now?string('yyyy-MM-dd')}
- */
+*  ${classInfo.classComment}
+*
+* @author  ${authorName}
+* @version Id:  ${classInfo.className}Controller.java
+*/
 @RestController
 @RequestMapping(value = "/${classInfo.className?uncap_first}")
 public class ${classInfo.className}Controller {

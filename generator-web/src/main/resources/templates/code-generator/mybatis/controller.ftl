@@ -28,7 +28,7 @@ public class ${classInfo.className}Controller {
     * @date ${.now?string('yyyy/MM/dd')}
     **/
     @RequestMapping("/insert")
-    public Result<Boolean> insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
+    public Result<Boolean> insert(@RequestBody ${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
         return ${classInfo.className?uncap_first}Service.insert(${classInfo.className?uncap_first}ReqDTO);
     }
 
@@ -39,7 +39,7 @@ public class ${classInfo.className}Controller {
     * @date ${.now?string('yyyy/MM/dd')}
     **/
     @RequestMapping("/update")
-    public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
+    public Result<Boolean> update(@RequestBody ${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
         return ${classInfo.className?uncap_first}Service.update(${classInfo.className?uncap_first}ReqDTO);
     }
 
@@ -49,7 +49,7 @@ public class ${classInfo.className}Controller {
     * @date ${.now?string('yyyy/MM/dd')}
     **/
     @RequestMapping("/selectOne")
-    public Result<${classInfo.className}ResDTO> selectOne(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
+    public Result<${classInfo.className}ResDTO> selectOne(@RequestBody ${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
         return ${classInfo.className?uncap_first}Service.selectOne(${classInfo.className?uncap_first}ReqDTO);
     }
 

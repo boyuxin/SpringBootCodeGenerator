@@ -12,6 +12,7 @@ import java.util.Map;
  * @date ${.now?string('yyyy-MM-dd')}
  */
 @Service
+@Slf4j
 public class ${classInfo.className}Biz {
 
 	@Autowired

@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 </#if>
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @description ${classInfo.classComment}
  * @author ${authorName}

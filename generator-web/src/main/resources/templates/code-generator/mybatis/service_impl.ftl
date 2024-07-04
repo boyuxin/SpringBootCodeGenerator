@@ -44,7 +44,7 @@ public class ${classInfo.className}ServiceImpl implements ${classInfo.className}
 
 
 	/**
-	* 更新
+	* 查询详情
 	* @author ${authorName}
 	* @date ${.now?string('yyyy/MM/dd')}
 	**/

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 </#if>
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.fosun.health.biz.base.common.enums.UsableFlagEnum;
 
 /**
  * @description ${classInfo.classComment}Mapper

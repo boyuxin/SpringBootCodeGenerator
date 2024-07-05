@@ -6,16 +6,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 </#if>
+import lombok.RequiredArgsConstructor;
+
 /**
  * @description ${classInfo.classComment}
  * @author ${authorName}
  * @date ${.now?string('yyyy-MM-dd')}
  */
 @Service
+@RequiredArgsConstructor
 public class ${classInfo.className}ServiceImpl implements ${classInfo.className}Service {
 
-	@Autowired
-	private ${classInfo.className}Biz ${classInfo.className?uncap_first}Biz;
+	private final  ${classInfo.className}Biz ${classInfo.className?uncap_first}Biz;
 
 
 	/**

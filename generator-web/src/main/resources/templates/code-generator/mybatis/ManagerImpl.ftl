@@ -13,10 +13,10 @@ import com.fosun.health.biz.base.common.enums.UsableFlagEnum;
  * @date ${.now?string('yyyy-MM-dd')}
  */
 @Component
+@RequiredArgsConstructor
 public class ${classInfo.className}ManagerImpl implements ${classInfo.className}Manager  {
 
-    @Autowired
-    private ${classInfo.className}Mapper ${classInfo.className?uncap_first}Mapper;
+    private final  ${classInfo.className}Mapper ${classInfo.className?uncap_first}Mapper;
 
     /**
     * 新增

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 </#if>
 import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @description ${classInfo.classComment}
@@ -15,10 +16,10 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class ${classInfo.className}Biz {
 
-	@Autowired
-	private ${classInfo.className}Manager ${classInfo.className?uncap_first}Manager;
+    private final  ${classInfo.className}Manager ${classInfo.className?uncap_first}Manager;
 
 
 	/**

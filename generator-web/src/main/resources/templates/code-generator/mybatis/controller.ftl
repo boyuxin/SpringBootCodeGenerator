@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 </#if>
+import com.fosun.health.biz.base.common.result.Result;
+import com.fosun.health.biz.base.common.PageDTO;
+
 
 /**
 *  ${classInfo.classComment}
@@ -28,7 +31,7 @@ public class ${classInfo.className}Controller {
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    @RequestMapping("/insert")
+    @PostMapping("/insert")
     public Result<Boolean> insert(@RequestBody ${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
         return ${classInfo.className?uncap_first}Service.insert(${classInfo.className?uncap_first}ReqDTO);
     }
@@ -39,7 +42,7 @@ public class ${classInfo.className}Controller {
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    @RequestMapping("/update")
+    @PostMapping("/update")
     public Result<Boolean> update(@RequestBody ${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
         return ${classInfo.className?uncap_first}Service.update(${classInfo.className?uncap_first}ReqDTO);
     }
@@ -49,7 +52,7 @@ public class ${classInfo.className}Controller {
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    @RequestMapping("/selectOne")
+    @PostMapping("/selectOne")
     public Result<${classInfo.className}ResDTO> selectOne(@RequestBody ${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO){
         return ${classInfo.className?uncap_first}Service.selectOne(${classInfo.className?uncap_first}ReqDTO);
     }
@@ -59,7 +62,7 @@ public class ${classInfo.className}Controller {
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    @RequestMapping("/pageList")
+    @PostMapping("/pageList")
     public  Result<PageDTO<${classInfo.className}ResDTO>>  pageList(@RequestBody PageDTO<${classInfo.className}ReqDTO> pageDTO) {
         return ${classInfo.className?uncap_first}Service.pageList(pageDTO);
     }

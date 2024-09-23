@@ -1,6 +1,8 @@
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+import com.fosun.health.biz.base.common.PageDTO;
+
 <#if isAutoImport?exists && isAutoImport==true>
 import java.util.Map;
 </#if>

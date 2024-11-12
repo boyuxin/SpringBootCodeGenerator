@@ -6,6 +6,7 @@ import java.util.List;
 </#if>
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fosun.health.biz.base.common.enums.UsableFlagEnum;
+import org.springframework.stereotype.Component;
 
 /**
  * @description ${classInfo.classComment}Mapper
@@ -51,7 +52,7 @@ public class ${classInfo.className}ManagerImpl implements ${classInfo.className}
     Page<${classInfo.className}DO> page = new Page<>(pageBO.getCurrentPage(), pageBO.getPageSize());
         QueryWrapper<${classInfo.className}DO> queryWrapper = new QueryWrapper<>();
             queryWrapper.eq("", "");
-            queryWrapper.eq("usable_flag", UsableFlagEnum.USABLE);
+            queryWrapper.eq("usable_flag", UsableFlagEnum.USABLE.getCode());
             ${classInfo.className?uncap_first}Mapper.selectPage(page, queryWrapper);
             pageBO.setTotalSize((int) page.getTotal());
             pageBO.setTotalPage((int) page.getPages());
@@ -67,7 +68,7 @@ public class ${classInfo.className}ManagerImpl implements ${classInfo.className}
     public ${classInfo.className}BO selectOne(${classInfo.className}BO ${classInfo.className?uncap_first}BO) {
         QueryWrapper<${classInfo.className}DO> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("", "");
-        queryWrapper.eq("usable_flag", UsableFlagEnum.USABLE);
+        queryWrapper.eq("usable_flag", UsableFlagEnum.USABLE.getCode());
         ${classInfo.className}DO ${classInfo.className?uncap_first}DO = ${classInfo.className?uncap_first}Mapper.selectOne(queryWrapper);
         return  ${classInfo.className}Convert.INSTANCE.convertDOToBO(${classInfo.className?uncap_first}DO);
     }

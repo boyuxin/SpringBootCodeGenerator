@@ -13,7 +13,7 @@ public interface ${classInfo.className}Service {
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    public Result<Boolean> insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
+    Result<Boolean> insert(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
 
     /**
@@ -21,14 +21,14 @@ public interface ${classInfo.className}Service {
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    public Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
+    Result<Boolean> update(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
     /**
     * 查询详情
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    public Result<${classInfo.className}ResDTO> selectOne(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
+    Result<${classInfo.className}ResDTO> selectOne(${classInfo.className}ReqDTO ${classInfo.className?uncap_first}ReqDTO);
 
 
     /**
@@ -36,6 +36,6 @@ public interface ${classInfo.className}Service {
     * @author ${authorName}
     * @date ${.now?string('yyyy/MM/dd')}
     **/
-    public  Result<PageDTO<${classInfo.className}ResDTO>>  pageList(PageDTO<${classInfo.className}ReqDTO> pageDTO);
+    Result<PageDTO<${classInfo.className}ResDTO>>  pageList(PageDTO<${classInfo.className}ReqDTO> pageDTO);
 
 }
